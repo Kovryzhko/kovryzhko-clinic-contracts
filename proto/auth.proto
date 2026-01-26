@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package auth.v1;
+
+message SendOtpRequest {
+  string identifier = 1;
+  string type       = 2;
+}
+
+message SendOtpResponse {
+  string ok = 1;
+}
+
+service AuthService {
+  rpc SendOtp(SendOtpRequest) returns (SendOtpResponse);
+}
