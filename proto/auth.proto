@@ -8,9 +8,21 @@ message SendOtpRequest {
 }
 
 message SendOtpResponse {
-  string ok = 1;
+  bool ok = 1;
+}
+
+message VerifyOtpRequest {
+  string identifier = 1;
+  string type       = 2;
+  string code       = 3;
+}
+
+message VerifyOtpResponse {
+  string access_token  = 1;
+  string refresh_token = 2;
 }
 
 service AuthService {
   rpc SendOtp(SendOtpRequest) returns (SendOtpResponse);
+  rpc VerifyOtp(VerifyOtpRequest) returns (VerifyOtpResponse)
 }
