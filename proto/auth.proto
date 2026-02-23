@@ -37,12 +37,22 @@ message TelegramInitResponse {
   string url = 1;
 }
 
+message TelegramVerifyRequest {
+  map<string, string> data = 1;
+}
+
+message TelegramVerifyResponse {
+  string access_token  = 1;
+  string refresh_token = 2;
+}
+
 service AuthService {
   rpc SendOtp(SendOtpRequest) returns (SendOtpResponse);
   rpc VerifyOtp(VerifyOtpRequest) returns (VerifyOtpResponse);
   rpc Refresh(RefreshRequest) returns (RefreshResponse);
 
   rpc TelegramInit(google.protobuf.Empty) returns (TelegramInitResponse);
+  rpc TelegramVerify(TelegramVerifyRequest) returns (TelegramVerifyResponse);
 }
 
 
