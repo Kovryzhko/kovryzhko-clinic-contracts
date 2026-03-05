@@ -9,8 +9,8 @@ message GetMeRequest {
 message User {
     string id = 1;
     optional string name = 2;
-    optional email name = 3;
-    optional phone = 4;
+    optional string name = 3;
+    optional string phone = 4;
 }
 
 message GetMeRespons {
