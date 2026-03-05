@@ -26,8 +26,8 @@ message CreateUserResponse {
 }
 
 service UserService {
-    rpc GetMe(GetMeRequest) returns (GetMeResponse)
+    rpc GetMe(GetMeRequest) returns (GetMeResponse);
 
-    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse)
+    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
 }
 
