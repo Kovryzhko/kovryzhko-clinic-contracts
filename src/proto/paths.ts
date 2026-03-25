@@ -4,4 +4,5 @@ export const PROTO_PATHS = {
     AUTH: join(__dirname, '../../proto/auth.proto'),
     ACCOUNT: join(__dirname, '../../proto/account.proto'),
     USER: join(__dirname, '../../proto/user.proto'),
+    PRODUCT: join(__dirname, '../../proto/product.proto')
 } as const

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package product.v1;
+
+message ListProductRequest {
+    string category = 1;
+    int32 page = 2;
+    int32 limit = 3;
+}
+
+message Product {
+    string id = 1;
+    string title = 2;
+    int32 price = 3;
+}
+
+message ListProductResponse {
+    repeated Product products = 1;
+    int32 total = 2;
+    int32 total_pages = 5;
+}
+
+service ProductService {
+    rpc ListProduct(ListProductRequest) returns (ListProductResponse);
+}
