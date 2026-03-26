@@ -2,8 +2,16 @@ syntax = "proto3";
 
 package product.v1;
 
+enum Category {
+    TESTS = 0;
+    DENTAL = 1;
+    NEUROLOGY = 2;
+    SURGERY = 3;
+    OTOLARYNGOLOGY = 4;
+}
+
 message ListProductRequest {
-    string category = 1;
+    Category category = 1;
     int32 page = 2;
     int32 limit = 3;
 }
